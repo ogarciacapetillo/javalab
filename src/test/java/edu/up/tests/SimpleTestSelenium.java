@@ -22,16 +22,6 @@ public class SimpleTestSelenium {
         driver.close();
     }
 
-    private URL getResource(String path) {
-        ClassLoader classLoader = getClass().getClassLoader();
-        try {
-            return classLoader.getResource(path);
-        } catch (Exception e) {
-            e.printStackTrace();
-            return null;
-        }
-    }
-
     private void setupChromeDriver() {
         if (System.getProperty("os.name").contains("Mac")) {
             File cDriver = new File(SimpleTestSelenium.class.getResource(MAC_DRIVER).getFile());
